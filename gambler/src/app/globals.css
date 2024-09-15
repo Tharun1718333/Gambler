@@ -2,32 +2,164 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.mid {
+  position: absolute;
+  left: 40%;
+  top: 40%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.left_side {
+  top: 48%;
+}
+
+.dice_pos {
+  margin-top: 3%;
+  margin-left: 12%;
+}
+
+.roll_dice_button {
+  margin-left: 16%;
+  margin-top: 5%;
+}
+
+.dice {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px; /* Space between the cubes */
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.rotate {
+  animation: turn 4s ease-in-out infinite;
+}
+.rotate-reverse {
+  animation: turn-reverse 4s ease-in-out infinite;
+}
+
+.face {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+.back {
+  transform: translateZ(-50px) rotateY(180deg);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.top {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+.bottom {
+  transform: rotateX(-270deg) translateZ(50px);
+}
+
+.custom-button {
+  background-color: red;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+  margin: 25%;
+  border-radius: 15px;
+}
+
+.number {
+  display: block;
+  text-align: center;
+}
+
+.number:first-child {
+  font-size: 24px;
+  font-weight: bold;
+  color: yellow;
+}
+
+.number:last-child {
+  font-size: 18px;
+  color: green;
+}
+
+.reward {
+  width: 2%;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  12.5% {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  25% {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  37.5% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, -1, 90deg);
+  }
+  62.5% {
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  75% {
+    transform: rotate3d(0, -1, 0, 90deg);
+  }
+  87.5% {
+    transform: rotate3d(1, 1, 1, 90deg);
+  }
+  100% {
+    transform: rotate3d(-1, -1, -1, 90deg);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes turn-reverse {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  12.5% {
+    transform: rotate3d(-1, -1, -1, 90deg);
+  }
+  25% {
+    transform: rotate3d(1, 1, 1, 90deg);
+  }
+  37.5% {
+    transform: rotate3d(0, 0, -1, 90deg);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  62.5% {
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  75% {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  87.5% {
+    transform: rotate3d(0, -1, 0, 90deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 90deg);
   }
 }
