@@ -1,22 +1,29 @@
 "use client";
 import { useState } from "react";
 
-export default function Dice() {
+export default function Dice({ EmitDiceRoll, LockDownEmitter }) {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [dice1Value, setDice1Value] = useState(1);
   const [dice2Value, setDice2Value] = useState(1);
   const handleRollDice = () => {
+    LockDownEmitter(true);
     handle_dice_animation();
     disable_button();
+    let dice1 = Math.floor(Math.random() * 6) + 1;
+    let dice2 = Math.floor(Math.random() * 6) + 1;
     setTimeout(() => {
-      setDice1Value(Math.floor(Math.random() * 6) + 1);
-      setDice2Value(Math.floor(Math.random() * 6) + 1);
+      setDice1Value(dice1);
+      setDice2Value(dice2);
     }, 2000);
+    setTimeout(() => {
+      EmitDiceRoll(dice1 + dice2);
+    }, 4000);
   };
   const disable_button = () => {
     setIsButtonDisabled(true);
     setTimeout(() => {
       setIsButtonDisabled(false);
+      LockDownEmitter(false);
     }, 4000);
   };
   const handle_dice_animation = () => {
@@ -32,8 +39,8 @@ export default function Dice() {
   };
 
   return (
-    <div>
-      <div className="dice dice_pos">
+    <div className="flex flex-col">
+      <div className="dice dice_pos ml-20">
         <div className="cube" id="dice1">
           <div className="face front">{dice1Value}</div>
           <div className="face back">2</div>
@@ -53,7 +60,7 @@ export default function Dice() {
       </div>
       <button
         onClick={handleRollDice}
-        className="roll_dice_button bg-blue-500 text-white px-4 py-2"
+        className="bg-blue-500 text-white px-4 py-2 flex-initial w-24 mt-8 ml-32"
         disabled={isButtonDisabled}
         id="rollDiceButton"
       >

@@ -12,7 +12,7 @@
   top: 48%;
 }
 
-.dice_pos {
+/* .dice_pos {
   margin-top: 3%;
   margin-left: 12%;
 }
@@ -20,7 +20,7 @@
 .roll_dice_button {
   margin-left: 16%;
   margin-top: 5%;
-}
+} */
 
 .dice {
   height: 100px;
@@ -72,36 +72,6 @@
 }
 .bottom {
   transform: rotateX(-270deg) translateZ(50px);
-}
-
-.custom-button {
-  background-color: red;
-  color: black;
-  border: 1px solid black;
-  padding: 10px;
-  cursor: pointer;
-  margin: 25%;
-  border-radius: 15px;
-}
-
-.number {
-  display: block;
-  text-align: center;
-}
-
-.number:first-child {
-  font-size: 24px;
-  font-weight: bold;
-  color: yellow;
-}
-
-.number:last-child {
-  font-size: 18px;
-  color: green;
-}
-
-.reward {
-  width: 2%;
 }
 
 @keyframes turn {

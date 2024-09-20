@@ -32,6 +32,9 @@ public class UserController {
     @PostMapping("/validate")
     public boolean postMethodName(@RequestBody aspnetuser user) {
         aspnetuser temp = userService.getFirstUserByName(user.getName());
+        if (temp == null) {
+            return false;
+        }
         return temp.getPwd().equals(user.getPwd());
     }
 
