@@ -12,15 +12,16 @@
   top: 48%;
 }
 
-/* .dice_pos {
-  margin-top: 3%;
-  margin-left: 12%;
+.progressBar {
+  width: 45%;
 }
 
-.roll_dice_button {
-  margin-left: 16%;
-  margin-top: 5%;
-} */
+.positive {
+  height: 1.5%;
+}
+.negitive {
+  height: 0%;
+}
 
 .dice {
   height: 100px;

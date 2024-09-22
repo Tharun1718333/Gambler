@@ -16,28 +16,28 @@ export default function Numbers({ isLockDown, SelectionEmitter }) {
       <div className="flex flex-row">
         <Reward
           num={2}
-          reward={700}
+          reward={500}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={2}
         />
         <Reward
           num={12}
-          reward={700}
+          reward={500}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={12}
         />
         <Reward
           num={3}
-          reward={350}
+          reward={300}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={3}
         />
         <Reward
           num={11}
-          reward={350}
+          reward={300}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={11}
@@ -46,28 +46,28 @@ export default function Numbers({ isLockDown, SelectionEmitter }) {
       <div className="flex flex-row">
         <Reward
           num={4}
-          reward={220}
+          reward={180}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={4}
         />
         <Reward
           num={10}
-          reward={220}
+          reward={180}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={10}
         />
         <Reward
           num={5}
-          reward={160}
+          reward={140}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={5}
         />
         <Reward
           num={9}
-          reward={160}
+          reward={140}
           onRewardSelect={RewardEmitter}
           CurrentReward={currentReward}
           id={9}

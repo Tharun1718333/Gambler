@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
 
-export default function Dice({ EmitDiceRoll, LockDownEmitter }) {
+export default function Dice({ EmitDiceRoll, LockDownEmitter, coins }) {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [dice1Value, setDice1Value] = useState(1);
   const [dice2Value, setDice2Value] = useState(1);
   const handleRollDice = () => {
+    console.log(coins);
     LockDownEmitter(true);
     handle_dice_animation();
     disable_button();
@@ -16,7 +17,7 @@ export default function Dice({ EmitDiceRoll, LockDownEmitter }) {
       setDice2Value(dice2);
     }, 2000);
     setTimeout(() => {
-      EmitDiceRoll(dice1 + dice2);
+      EmitDiceRoll(dice1, dice2);
     }, 4000);
   };
   const disable_button = () => {
@@ -61,11 +62,14 @@ export default function Dice({ EmitDiceRoll, LockDownEmitter }) {
       <button
         onClick={handleRollDice}
         className="bg-blue-500 text-white px-4 py-2 flex-initial w-24 mt-8 ml-32"
-        disabled={isButtonDisabled}
+        disabled={isButtonDisabled || coins <= 0}
         id="rollDiceButton"
       >
         Roll Dice
       </button>
+      {coins <= 0 ? (
+        <span className="ml-28 mt-5">You are done, go home</span>
+      ) : null}
     </div>
   );
 }
