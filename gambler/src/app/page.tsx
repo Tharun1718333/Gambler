@@ -11,5 +11,5 @@ export default function Home() {
     setIsLoggedIn(status);
   }
 
-  return <div>{isLoggedIn ? <Roll /> : <Login LoginStatus={getStatus} />}</div>;
+  return <div>{true ? <Roll /> : <Login LoginStatus={getStatus} />}</div>;
 }
