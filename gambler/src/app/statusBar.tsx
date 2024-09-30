@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function StatusBar({ curr }) {
+export default function StatusBar({ curr }: any) {
   return (
     <div className="flex w-full justify-center flex-col">
       <div className="self-center text-orange-600">{curr}</div>

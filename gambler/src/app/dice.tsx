@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Dice({ EmitDiceRoll, LockDownEmitter, coins }) {
+export default function Dice({ EmitDiceRoll, LockDownEmitter, coins }: any) {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [dice1Value, setDice1Value] = useState(1);
   const [dice2Value, setDice2Value] = useState(1);

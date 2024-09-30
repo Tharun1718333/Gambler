@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Reward from "./reward";
 
-export default function Numbers({ isLockDown, SelectionEmitter }) {
+export default function Numbers({ isLockDown, SelectionEmitter }: any) {
   const [currentReward, rewardSelector] = useState(2);
   function RewardEmitter(num: number) {
     if (!isLockDown) {
