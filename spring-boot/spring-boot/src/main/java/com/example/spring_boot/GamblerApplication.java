@@ -8,7 +8,6 @@ public class GamblerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GamblerApplication.class, args);
-		System.out.println("Virat Kohli 183");
 	}
 
 }
